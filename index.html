@@ -530,9 +530,10 @@
       };
     }
 
-    // ✅ Busca SEMPRE o JSON do MESMO domínio da página
-    // (sem query aqui; o cache-buster vai ser aplicado no loadStatus)
-    const STATUS_URL = "/status.json";
+    // ✅ Caminho relativo: resolve conforme o diretório da página atual
+    // - Em https://gravscale.github.io/status-page/ → /status-page/status.json
+    // - Em https://status.under.com.br/ → /status.json
+    const STATUS_URL = "status.json";
 
     function escapeHtml(str) {
       return String(str ?? "")
